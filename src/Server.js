@@ -34,4 +34,4 @@ app.use('/', webRouters);
 app.use('/', authRouters);
 app.use('/v1', apiRouters);
 
-modules.exports = app;
+module.exports = app;
