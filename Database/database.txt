@@ -1,0 +1,77 @@
+
+---table
+1)ROLE
++ID : INT -> khóa chính tự tăng
++NAME: string (varchar) - 20 kí tự
+
+2)USER
++ID: int -> khóa chính tự tăng
++NAME: string - 50 kí tự
++EMAIL: string - 150 kí tự -> unique
++SDT: string - 20 kí tự -> unique
++ACCOUNT: string - 150 kí tự -> unique
++PASSWORD: string -> mã hóa md5 ->32 kí tự
++ROLE_ID: int -> foreign key -> role(id)
++DATE_CREATE:datetime
++DATE_UPDATE:datetime
+3)MON_AN
++ID: int -> khóa chính tự tăng
++NAME: string - 150 kí tự
++NOI_DUNG: string - 150 kí tự
++IMAGE: string - 500 kí tự
++THE_LOAI string 20 kí tự in ("Khai vị","Đồ ăn sáng","Thức Uống","Món Chính","Tráng Miệng")
++KT_CHE_BIEN string 20 kí tự in ("Kho","Nướng","Hấp","Xào","Chiên")
+
+4)CHI_TIET_MON_AN
++ID: int -> khóa chính tự tăng
++TITLE: string - 150 kí tự
++NOI_DUNG: longtext
++ID_MON_AN: int -> foreign key -> MON_AN(ID)
++DATE_CREATE:datetime
++DATE_UPDATE:datetime
+
+5)MEO
++ID: int -> khóa chính tự tăng
++NAME: string - 150 kí tự
++NOI_DUNG :string - 150 kí tự
++IMAGE: string - 500 kí tự
+
+6)CHI_TIET_MEO
++ID: int -> khóa chính tự tăng
++TITLE: string - 150 kí tự
++NOI_DUNG: longtext
++ID_MEO: int -> foreign key -> MEO(ID)
++DATE_CREATE:datetime
++DATE_UPDATE:datetime
+
+7)IMAGE_CTMA
++ID: int -> khóa chính tự tăng
++ID_CTMA: int -> foreign key -> CTMA(ID)
++IMAGE: string - 500 kí tự
+
+8)IMAGE_CTMEO
++ID: int -> khóa chính tự tăng
++ID_CTMEO: int -> foreign key -> CTMEO(ID)
++IMAGE: string - 500 kí tự
+
+9)PHAN_HOI
++ID: int -> khóa chính tự tăng
++TITLE: string - 150 kí tự
++NOI_DUNG: string - 500 kí tự 
++DATE_CREATE:datetime
++USER_ID: int -> foreign key -> USER(ID)
++email: string -> 150 kí tự
++SUBJECT: string -> 200 kí tự
+
+10)YEU_THICH_MON_AN
++ID_USER: int -> foreign key -> USER(ID)
++ID_CTMA: int -> foreign key -> CTMA(ID)
+
+11)YEU_THICH_MEO
++ID_USER: int -> foreign key -> USER(ID)
++ID_CTMEO: int -> foreign key -> CTMEO(ID)
+
+https://dbdiagram.io/d/WebCooking-66087b9037b7e33fd71e0536 
+
+
+
